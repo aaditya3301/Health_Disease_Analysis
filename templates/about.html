@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% block title %}About{% endblock %}
+
+{% block content %}
+<!-- About Hero -->
+<section class="page-hero">
+    <div class="page-hero-container">
+        <h1>About the Project</h1>
+        <p>Understanding heart disease through data-driven analysis</p>
+    </div>
+</section>
+
+<!-- About Content -->
+<section class="about-section">
+    <div class="section-container">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>What is Heart Disease?</h2>
+                <p>Heart disease (heart disease) is a group of diseases related to cardiovascular diseases, manifested by a violation of the normal functioning of the heart. May be caused by damage to the epicardium, pericardium, myocardium, endocardium, valvular apparatus of the heart, heart vessels.</p>
+                <p>According to the National Heart, Lung and Blood Institute in Framingham (USA), the most important factors in the development of cardiovascular disease in humans are obesity, sedentary lifestyle and smoking.</p>
+            </div>
+            <div class="about-image">
+                <div class="about-image-placeholder">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Project Overview -->
+<section class="project-overview">
+    <div class="section-container">
+        <h2 class="section-title">Project Overview</h2>
+        <p class="section-subtitle">A comprehensive approach to heart disease data analysis</p>
+
+        <div class="overview-grid">
+            <div class="overview-card">
+                <div class="overview-number">01</div>
+                <h3>Problem Definition</h3>
+                <p>Understanding the business problem, requirements, literature survey, and social impact of heart disease analysis.</p>
+            </div>
+            <div class="overview-card">
+                <div class="overview-number">02</div>
+                <h3>Data Collection</h3>
+                <p>Collecting datasets, storing data in databases, performing SQL operations, and connecting DB with Tableau.</p>
+            </div>
+            <div class="overview-card">
+                <div class="overview-number">03</div>
+                <h3>Data Preparation</h3>
+                <p>Preparing and cleaning the data for visualization, ensuring quality and consistency across all metrics.</p>
+            </div>
+            <div class="overview-card">
+                <div class="overview-number">04</div>
+                <h3>Visualization</h3>
+                <p>Creating unique visualizations including interactive dashboards and multi-scene stories in Tableau.</p>
+            </div>
+            <div class="overview-card">
+                <div class="overview-number">05</div>
+                <h3>Performance Testing</h3>
+                <p>Testing data rendering, filter utilization, calculation fields, and visualization performance.</p>
+            </div>
+            <div class="overview-card">
+                <div class="overview-number">06</div>
+                <h3>Web Integration</h3>
+                <p>Embedding Tableau dashboards and stories into a Flask web application for seamless access.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="skills-section">
+    <div class="section-container">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="skills-grid">
+            <div class="skill-badge"><i class="fas fa-database"></i> Data Analysis</div>
+            <div class="skill-badge"><i class="fas fa-chart-pie"></i> Data Visualization</div>
+            <div class="skill-badge"><i class="fab fa-python"></i> Flask</div>
+            <div class="skill-badge"><i class="fas fa-tachometer-alt"></i> Dashboard Design</div>
+            <div class="skill-badge"><i class="fas fa-chart-line"></i> Tableau</div>
+            <div class="skill-badge"><i class="fas fa-code"></i> SQL</div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="team-section">
+    <div class="section-container">
+        <h2 class="section-title">Our Team</h2>
+        <p class="section-subtitle">The people behind this project</p>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-avatar"><i class="fas fa-user"></i></div>
+                <h3>Aaditya Singhal</h3>
+                <span class="team-role">Team Lead</span>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar"><i class="fas fa-user"></i></div>
+                <h3>Aalap Raj</h3>
+                <span class="team-role">Member</span>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar"><i class="fas fa-user"></i></div>
+                <h3>Aashi Chaudhary</h3>
+                <span class="team-role">Member</span>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar"><i class="fas fa-user"></i></div>
+                <h3>Aastha Sheoran</h3>
+                <span class="team-role">Member</span>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

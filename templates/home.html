@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1>Heart Disease Analysis</h1>
+            <p class="hero-subtitle">Transforming raw health data into meaningful dashboards, highlighting key risk factors and identifying correlations to support better decision-making for healthcare providers, policymakers, and individuals.</p>
+            <a href="{{ url_for('dashboard') }}" class="btn-hero">Get Started <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-image">
+            <img src="{{ url_for('static', filename='images/hero-illustration.svg') }}" alt="Heart Disease Analysis" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=hero-placeholder><i class=fas fa-heartbeat></i></div>'">
+        </div>
+    </div>
+    <div class="hero-wave">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,60 C360,120 720,0 1440,60 L1440,120 L0,120 Z" fill="#ffffff"/>
+        </svg>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+    <div class="section-container">
+        <h2 class="section-title">What We Analyze</h2>
+        <p class="section-subtitle">Comprehensive heart disease data analysis covering multiple dimensions</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-venus-mars"></i></div>
+                <h3>Gender Analysis</h3>
+                <p>Understand how heart disease affects different genders and identify gender-specific risk patterns.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-syringe"></i></div>
+                <h3>Diabetic Correlation</h3>
+                <p>Explore the relationship between diabetes, stroke, and heart disease across patient groups.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-users"></i></div>
+                <h3>Race-wise Trends</h3>
+                <p>Analyze heart disease prevalence across different racial and ethnic demographics.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-smoking"></i></div>
+                <h3>Lifestyle Impact</h3>
+                <p>Study the impact of smoking, alcohol consumption, and physical activity on heart disease risk.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
+                <h3>Interactive Dashboards</h3>
+                <p>Dynamic Tableau dashboards that allow filtering and drill-down into specific data segments.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-book-open"></i></div>
+                <h3>Data Stories</h3>
+                <p>Guided story-based analysis that walks through key findings and actionable insights.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Scenarios Section -->
+<section class="scenarios">
+    <div class="section-container">
+        <h2 class="section-title">Real-World Scenarios</h2>
+        <p class="section-subtitle">How our analysis empowers different stakeholders</p>
+        <div class="scenarios-grid">
+            <div class="scenario-card">
+                <div class="scenario-icon"><i class="fas fa-user-md"></i></div>
+                <h3>Dr. Sharma — Cardiologist</h3>
+                <p>Uses dashboards to analyze patient data segmented by age, gender, BMI, cholesterol levels, and smoking habits to identify high-risk groups and design targeted awareness campaigns.</p>
+            </div>
+            <div class="scenario-card">
+                <div class="scenario-icon"><i class="fas fa-landmark"></i></div>
+                <h3>Ramesh — Health Policy Maker</h3>
+                <p>Studies heart disease trends across regions, comparing rural and urban populations, to recommend policies like workplace fitness programs and tobacco regulations.</p>
+            </div>
+            <div class="scenario-card">
+                <div class="scenario-icon"><i class="fas fa-female"></i></div>
+                <h3>Anita — Health-Conscious Individual</h3>
+                <p>Monitors personal risk factors through simplified dashboards comparing her cholesterol, blood pressure, and lifestyle habits against healthy benchmarks.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="section-container">
+        <div class="cta-content">
+            <h2>Explore the Dashboard</h2>
+            <p>Dive into interactive Tableau visualizations and uncover insights about heart disease risk factors.</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('dashboard') }}" class="btn-primary">View Dashboard</a>
+                <a href="{{ url_for('story') }}" class="btn-secondary">View Story</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
