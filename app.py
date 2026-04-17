@@ -3,12 +3,16 @@ from flask import Flask, render_template, request, flash, redirect, url_for
 app = Flask(__name__)
 app.secret_key = 'heart-disease-analysis-secret-key'
 
-# =====================================================
-# TABLEAU EMBED URLS - REPLACE THESE WITH YOUR OWN
-# =====================================================
-TABLEAU_DASHBOARD_URL = "https://public.tableau.com/views/YourWorkbookName/Dashboard"
-TABLEAU_STORY_URL = "https://public.tableau.com/views/YourWorkbookName/Story"
-# =====================================================
+
+def build_gallery(items):
+    return [
+        {
+            'src': url_for('static', filename=item['path']),
+            'title': item['title'],
+            'description': item['description'],
+        }
+        for item in items
+    ]
 
 
 @app.route('/')
@@ -23,12 +27,81 @@ def about():
 
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html', tableau_url=TABLEAU_DASHBOARD_URL)
+    dashboard_slides = build_gallery([
+        {
+            'path': 'images/dashboard/Screenshot 2026-04-17 092804.png',
+            'title': 'Dashboard Overview',
+            'description': 'Main dashboard layout with summary charts and filters.',
+        },
+        {
+            'path': 'images/dashboard/Screenshot 2026-04-17 092811.png',
+            'title': 'Visualization Detail',
+            'description': 'Detailed chart view showing the key heart disease patterns.',
+        },
+        {
+            'path': 'images/dashboard/Screenshot 2026-04-17 092820.png',
+            'title': 'Final Dashboard View',
+            'description': 'Full dashboard screenshot for the final presentation slide.',
+        },
+    ])
+    return render_template('dashboard.html', slides=dashboard_slides)
 
 
 @app.route('/story')
 def story():
-    return render_template('story.html', tableau_url=TABLEAU_STORY_URL)
+    story_slides = build_gallery([
+        {
+            'path': 'images/story/Screenshot 2026-04-17 092903.png',
+            'title': 'Story Scene 1',
+            'description': 'Gender suffering from heart disease.',
+        },
+        {
+            'path': 'images/story/Screenshot 2026-04-17 092912.png',
+            'title': 'Story Scene 2',
+            'description': 'Effect of physical activity on heart disease.',
+        },
+        {
+            'path': 'images/story/Screenshot 2026-04-17 092918.png',
+            'title': 'Story Scene 3',
+            'description': 'Diabetes affecting heart disease.',
+        },
+        {
+            'path': 'images/story/Screenshot 2026-04-17 092924.png',
+            'title': 'Story Scene 4',
+            'description': 'Impact of smoking and alcohol on stroke.',
+        },
+        {
+            'path': 'images/story/Screenshot 2026-04-17 092930.png',
+            'title': 'Story Scene 5',
+            'description': 'Ethnicity-wise heart disease count.',
+        },
+        {
+            'path': 'images/story/Screenshot 2026-04-17 092939.png',
+            'title': 'Story Scene 6',
+            'description': 'People suffering from diabetes by age category.',
+        },
+        {
+            'path': 'images/story/Screenshot 2026-04-17 092949.png',
+            'title': 'Story Scene 7',
+            'description': 'Further analysis of heart disease indicators.',
+        },
+        {
+            'path': 'images/story/Screenshot 2026-04-17 092955.png',
+            'title': 'Story Scene 8',
+            'description': 'Additional story scene from the Tableau presentation.',
+        },
+        {
+            'path': 'images/story/Screenshot 2026-04-17 093003.png',
+            'title': 'Story Scene 9',
+            'description': 'Continuation of the story walkthrough.',
+        },
+        {
+            'path': 'images/story/Screenshot 2026-04-17 093011.png',
+            'title': 'Story Scene 10',
+            'description': 'Final story screenshot for the presentation.',
+        },
+    ])
+    return render_template('story.html', slides=story_slides)
 
 
 @app.route('/contact', methods=['GET', 'POST'])
